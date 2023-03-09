@@ -53,15 +53,6 @@ function filterTodos(e) {
 
 
 
-
-
-
-
-
-
-
-
-
 function clearAllTodos() {
 
     const allLi = document.querySelectorAll('.list-group-item');
@@ -149,6 +140,9 @@ function printTodos() {
         addTodoFromLocalStorage(inputValue);
         showAlerts('success', 'Girilən dəyər əlavə olundu');
     }
+    
+    
+    addTodoInput.focus();
 }
 
 
