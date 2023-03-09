@@ -65,11 +65,12 @@ function filterTodos(e) {
 function clearAllTodos() {
 
     const allLi = document.querySelectorAll('.list-group-item');
-
+    const searchTodoInput = document.querySelector('#searchTodoInput');
     if (allLi.length > 0) {
 
         allLi.forEach(valueLi => {
             valueLi.remove();
+            searchTodoInput.value='';
         })
 
         cars = [];
