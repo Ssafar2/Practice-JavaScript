@@ -12,6 +12,74 @@ addCityName.addEventListener('keyup', findCityInfo);
 
 function findCityInfo(e) {
 
+<<<<<<< HEAD
+
+runEvents();
+
+function runEvents() {
+
+    addTodoButton.addEventListener('click', printTodos);
+    document.addEventListener('DOMContentLoaded', showLocalStorageInfo);
+    secondCardBody.addEventListener('click', closeTodos);
+    addTodoInput.addEventListener('keyup', showTodoInput);
+    clearAllTodo.addEventListener('click', clearAllTodos);
+    searchTodoInput.addEventListener('keyup', filterTodos);
+}
+
+
+function filterTodos(e) {
+
+
+    const listGroup = document.querySelectorAll('.list-group-item');
+
+    const filterValue = e.target.value.toLowerCase().trim();
+
+
+    if (listGroup.length > 0) {
+
+        listGroup.forEach(filterTodo => {
+
+            if (filterTodo.textContent.toLowerCase().trim().includes(filterValue)) {
+                filterTodo.setAttribute('style', 'display:block');
+            }
+            else {
+                filterTodo.setAttribute('style', 'display:none');
+            }
+        });
+    }
+    else {
+        showAlerts('warning', 'Məlumat tapılmadı. Filtr üçün ən az 1 dəyər olmalıdır!');
+    }
+
+}
+
+
+
+function clearAllTodos() {
+
+    const allLi = document.querySelectorAll('.list-group-item');
+    const searchTodoInput = document.querySelector('#searchTodoInput');
+    if (allLi.length > 0) {
+
+        allLi.forEach(valueLi => {
+            valueLi.remove();
+            searchTodoInput.value='';
+        })
+
+        cars = [];
+        localStorage.setItem('cars', JSON.stringify(cars));
+        showAlerts('danger', 'Bütün məlumatlar silindi');
+    }
+    else {
+        showAlerts('warning', 'Məlumatın silinməsi üçün ən az 1 dəyər olmalıdır!');
+    }
+
+
+}
+
+
+function showTodoInput(e) {
+>>>>>>> 1541e035510def324eba54b17e08fd8c5ea93aa3
     if (e.keyCode === 13) {
         getResult(addCityName.value);
         addCityName.value = '';
@@ -19,6 +87,9 @@ function findCityInfo(e) {
        
 
     }
+    
+    
+    addTodoInput.focus();
 }
 
 
